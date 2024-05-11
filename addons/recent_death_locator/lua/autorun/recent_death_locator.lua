@@ -6,7 +6,7 @@ if SERVER then
         local victimName = victim:Nick()
         net.Start("RecentDeathLocation")
         net.WriteVector(deathLocation)
-        net.WriteString(victimName) 
+        net.WriteString(victimName)
         net.Broadcast()
         timer.Simple(15, function()
             net.Start("RecentDeathLocation")
@@ -18,14 +18,14 @@ if SERVER then
 end
 
 if CLIENT then
-    local deathLocations = {} 
-    local deathRange = 1000 
-    local deathExpirationTime = 15 
+    local deathLocations = {}
+    local deathRange = 1000
+    local deathExpirationTime = 15
 
     net.Receive("RecentDeathLocation", function()
         local location = net.ReadVector()
         local victimName = net.ReadString()
-        print("Received death location for:", victimName)
+        print("Received death location for:", victimName) 
         deathLocations[#deathLocations + 1] = { location = location, victimName = victimName, time = CurTime() }
     end)
 
@@ -54,6 +54,3 @@ if CLIENT then
         end
     end)
 end
-
-
-
