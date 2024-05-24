@@ -4,16 +4,12 @@ if SERVER then
     hook.Add("PlayerDeath", "RecentDeathLocator", function(victim, inflictor, attacker)
         local deathLocation = victim:GetPos()
         local victimName = victim:Nick()
+        
         net.Start("RecentDeathLocation")
         net.WriteVector(deathLocation)
         net.WriteString(victimName)
+        net.WriteFloat(CurTime())
         net.Broadcast()
-        timer.Simple(15, function()
-            net.Start("RecentDeathLocation")
-            net.WriteVector(Vector(0, 0, 0))
-            net.WriteString("")
-            net.Broadcast()
-        end)
     end)
 end
 
@@ -25,7 +21,14 @@ if CLIENT then
     net.Receive("RecentDeathLocation", function()
         local location = net.ReadVector()
         local victimName = net.ReadString()
-        print("Received death location for:", victimName) 
+        local timestamp = net.ReadFloat()
+
+        for i = #deathLocations, 1, -1 do
+            if deathLocations[i].victimName == victimName then
+                table.remove(deathLocations, i)
+            end
+        end
+
         deathLocations[#deathLocations + 1] = { location = location, victimName = victimName, time = CurTime() }
     end)
 
@@ -46,7 +49,6 @@ if CLIENT then
             end
         end
 
-        -- Clean up expired death locations
         for i = #deathLocations, 1, -1 do
             if CurTime() - deathLocations[i].time > deathExpirationTime then
                 table.remove(deathLocations, i)
