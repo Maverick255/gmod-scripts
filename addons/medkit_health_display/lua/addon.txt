@@ -1,7 +1,0 @@
-"AddonInfo"
-{
-    "name"        "Medkit Health Display"
-    "author"      "Maverick"
-    "description" "Displays health percentage of target player when using medkit."
-    "version"     "1.0"
-}
