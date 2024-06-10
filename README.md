@@ -5,7 +5,7 @@ For Addons:
 
 recent_death_locator is a locator addon that finds your most recent death, shows your name(steam name if sandbox, or all other gamemodes whatever your assigned nickname is.) and is set to make the text disappear after approx: 15 seconds. This script is typically good for those that do militarp style gamemodes and want to help their medics out, finding exact locations of where someone died. It also stops tracking the location when you get a certain distance away (Default set to 1000 units away.)
 
-medkit_health_display is a Display addon for anyone currently holding a medkit or whatever defined "wepon" in the file. To add your specific weapon to allow to see the health % of a player within range, goto addon folder>lua>autorun>client>medkit_health_display.lua and add it in under local allowedWeapons. Don't forget your commas.
+medkit_health_display is a Display addon for anyone currently holding a medkit or whatever defined "weapon" in the file. To add your specific weapon to allow to see the health % of a player within range, goto addon folder>lua>autorun>client>medkit_health_display.lua and add it in under local allowedWeapons. Don't forget your commas.
 
 For Autorun:
 
