@@ -1,0 +1,7 @@
+"AddonInfo"
+{
+    "name"        "Shove"
+    "author"      "Maverick255"
+    "description" "A simple shove mechanic that lets players knock each other back and animations to go with it"
+    "version"     "1.0"
+}
