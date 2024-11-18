@@ -1,0 +1,7 @@
+"AddonInfo"
+{
+    "name" "DarkRP Observer ESP"
+    "version" "1.0"
+    "author" "Maverick255"
+    "description" "Observer and ESP system for DarkRP admins."
+}
