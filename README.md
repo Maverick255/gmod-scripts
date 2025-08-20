@@ -5,7 +5,7 @@ For Addons:
 
 DarkRP Observer works in the same way as it does in nutscript. Just bind normal noclip from the options menu to say v, it will auto cloak you, your weapons and make you completely disappear in darkrp. It will show a dot at the center with lines to each player. Plan to add in the options menu to disable the functions of removing the lines and such in the future.
 
-Shove.lua is a small script to enough "pushing/shoving" people two times per 3 seconds and does 1 of 3 animations(Animations are based on Garrys mod own list of animations).
+Shove.lua is a small script to perform a "pushing/shoving" action on people two times per 3 seconds and does 1 of 3 animations(Animations are based on Garrys mod own list of animations).
 
 recent_death_locator is a locator addon that finds your most recent death, shows your name(steam name if sandbox, or all other gamemodes whatever your assigned nickname is.) and is set to make the text disappear after approx: 15 seconds. This script is typically good for those that do militarp style gamemodes and want to help their medics out, finding exact locations of where someone died. It also stops tracking the location when you get a certain distance away (Default set to 1000 units away.)
 
